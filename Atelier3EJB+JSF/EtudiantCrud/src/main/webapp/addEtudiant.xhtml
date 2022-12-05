@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<title>Ajouter étudiant</title>
+
+</h:head>
+<h:body style="background-color: #dhefef;">
+	
+		<h2>
+			<h:outputText value="Ajouter un étudiant" />
+		</h2>
+	
+		<h:form id="form">
+			<div>
+				<p>Ajouter etudiant</p>
+				<h:outputLabel> Nom </h:outputLabel>
+				<div>
+					<input type="text" style="width: 200px; height: 20px;" />
+					<h:inputText value="#{EtudiantBean.nom}" style="width: 200px; height: 20px;"></h:inputText>
+				</div>
+				<br />
+				
+				<h:outputLabel> Prénom </h:outputLabel>
+				<div>
+					<input type="text" style="width: 200px; height: 20px;" />
+					<h:inputText value="#{EtudiantBean.prenom}" style="width: 200px; height: 20px;"></h:inputText>
+				</div>
+				<br />
+				
+				<h:outputLabel> CNE </h:outputLabel>
+				<div>
+					<input type="text" style="width: 200px; height: 20px;" />
+					<h:inputText value="#{EtudiantBean.cne}" style="width: 200px; height: 20px;"></h:inputText>
+				</div>
+				<br />
+				
+				<h:outputLabel> Adresse </h:outputLabel>
+				<div>
+					<input type="text" style="width: 200px; height: 20px;" />
+					<h:inputText value="#{EtudiantBean.adresse}" style="width: 200px; height: 20px;"></h:inputText>
+				</div>
+				<br />
+				
+				<h:outputLabel> Niveau </h:outputLabel>
+				<div>
+					<input type="text" style="width: 200px; height: 20px;" />
+					<h:inputText value="#{EtudiantBean.niveau}" style="width: 200px; height: 20px;"></h:inputText>
+				</div>
+				<br />
+			</div>
+			<br />
+			
+			<div>
+			<BUTTON>Ajouter</BUTTON>
+				<h:commandButton value="addEtudiant"
+					action="#{EtudiantBean.addEtudiant(EtudiantBean)}"></h:commandButton>
+			</div>
+			<br />
+
+		</h:form>
+	
+</h:body>
+
+</html>

@@ -1,0 +1,70 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+<!DOCTYPE html>
+<html>
+<h:head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://code.ionicframework.com/1.0.0/css/ionic.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.ionicframework.com/1.0.0/js/ionic.bundle.js"></script>
+	<script src="http://code.jquery.com/jquery-2.0.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<meta charset="UTF-8">
+<title>Crud Etudiant</title>
+</h:head>
+<h:body >
+	
+	<h:form>
+		
+			<b:dataTable binding="#{table}" value="#{EtudiantBean.lister()}" var="e" bootstrapHover="true" bootstrapStriped="false" bootstrapResponsive="true">
+				
+				<b:column>
+					<f:facet name="nom">nom</f:facet>
+					<h:outputText value="#{e.nom}" />
+				</b:column>
+
+				<b:column>
+					<f:facet name="prenom">prenom</f:facet>
+					<h:outputText value="#{e.prenom}" />
+				</b:column>
+
+				<b:column>
+					<f:facet name="cne">cne</f:facet>
+					<h:outputText value="#{e.cne}" />
+				</b:column>
+
+				<b:column>
+					<f:facet name="adresse">adresse</f:facet>
+					<h:outputText value="#{e.adresse}" />
+				</b:column>
+				
+				<b:column>
+					<f:facet name="niveau">niveau</f:facet>
+					<h:outputText value="#{e.niveau}" />
+				</b:column>
+
+				<b:column>
+					<f:facet name="update">Update</f:facet>
+					<h:commandButton action="#{EtudiantBean.update(e.id_etudiant)}" value="Update" />
+				</b:column>
+
+				<b:column>
+					<f:facet name="delete">Delete</f:facet>
+					<h:commandButton action="#{EtudiantBean.supprimer(e.id_etudiant)}" value="Delete" />
+				</b:column>
+
+			</b:dataTable>
+		
+		
+			<div>
+				<h:commandButton action="addEtudiant.xhtml?faces-redirect=true" value="Ajouter Etudiant" />
+			</div>
+			<br />
+			
+	</h:form>
+</h:body>
